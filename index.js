@@ -1,6 +1,3 @@
-/*💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛
-                          FUNCIONES GENERALES
-💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛*/
 
 const hide = (element) => {
 	return element.classList.add('is-hidden');
@@ -26,9 +23,7 @@ const bodyScroll = () => {
 	document.body.classList.remove('no-scroll');
 };
 
-/*💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛
-                              FILTROS
-💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛*/
+
 /*                         ALGORITMO
 1- Seleccionar los elementos necesarios y guardarlos en variables
 2- Inicializar filtros. Recorrer todos los inputs de los filtros
@@ -140,7 +135,7 @@ const filterProducts = () => {
 /******************💛💛💛 4- LIMPIAR FILTROS 💛💛💛********************* */
 
 const clearSearchInput = () => {
-  inputSearch.value = ''
+	inputSearch.value = ''
 };
 
 const clearCheckboxesChequed = () => {
@@ -157,7 +152,7 @@ const showAllProducts = () => {
 	}
 };
 
-/************** 💛💛💛 2- INICIALIZAR FILTROS 💛💛💛*********** */
+
 
 // Si hace click en un checkbox o inicia una busqueda-> Filtrar productos
 
@@ -179,9 +174,7 @@ clearBtn.onclick = () => {
 	updateQtyProducts(); // actualiza el conteo de productos que muestra
 };
 
-/*💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛
-                      LISTA DE PRODUCTOS:GRID o LIST
-💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛*/
+
 /** Algoritmo
  * 1- Seleccionar los botones de grid y list, y contenedor de productos
  * 2- Inicializar evento onclick para ambos botones
@@ -189,7 +182,7 @@ clearBtn.onclick = () => {
  * agregar o quitar clases in-line o in-grid segun corresponda.
  * Mas agregar descripcion a cada tarjeta.
  */
-/******************💛💛💛 1- SELECCIONAR BOTONES  💛💛💛***************/
+
 const btnGrid = document.querySelector('#view-button-grid');
 const btnList = document.querySelector('#view-button-list');
 const productsListContainer = document.querySelector('.products-list');
@@ -228,7 +221,7 @@ btnList.onclick = () => {
 };
 
 /*💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛
-                              FILTROS EN RESPONSIVE
+							  FILTROS EN RESPONSIVE
 💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛*/
 const btnOpenFilters = document.querySelector('.open-filters-btn');
 const btnCloseFilters = document.querySelector('.close-filters-btn');
@@ -247,7 +240,7 @@ btnCloseFilters.onclick = () => {
 };
 
 /*💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛
-                              CARRITO
+							  CARRITO
 💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛*/
 /** Algoritmo
  * 1- Seleccionar todos los elementos necesarios
@@ -283,8 +276,8 @@ let subtotalProductsAdded = 0; // empiezo con $0 de compra
 
 const showCart = () => {
 	show(cart);
-  cart.classList.remove('menu-add-to-card-hidde');
-  cart.setAttribute('aria-hidden', false)
+	cart.classList.remove('menu-add-to-card-hidde');
+	cart.setAttribute('aria-hidden', false)
 	for (let c of counterProducts) {
 		if (c.innerText == 0) {
 			hide(cartFullMsg);
@@ -293,8 +286,8 @@ const showCart = () => {
 	}
 };
 const hiddeCart = () => {
-  cart.classList.add('menu-add-to-card-hidde');
-  cart.setAttribute('aria-hidden', true)
+	cart.classList.add('menu-add-to-card-hidde');
+	cart.setAttribute('aria-hidden', true)
 	hide(cart);
 	show(cartFullMsg);
 	hide(cartEmptyMsg);
@@ -320,7 +313,7 @@ const subtractCounterCart = () => {
 
 /** Saber cual es el producto que compraron
  * comparando id del boton con id del producto */
-const knowProduct = (btn,list) => {
+const knowProduct = (btn, list) => {
 	for (let x of list)
 		if (x.dataset.id === btn.getAttribute('id')) {
 			console.log(x.dataset.id)
@@ -395,7 +388,7 @@ const showProductOnCart = (btnAddToCart) => {
 		productAdded.dataset.image
 	);
 	carrito.innerHTML += plantilla;
-	
+
 };
 
 /******************💛💛💛 3-INICIALIZAR EVENTO MOSTRAR CARRITO 💛💛💛***************/
@@ -417,7 +410,7 @@ btnCloseCart.onclick = () => {
 
 const removeProductOfTheList = (btnRemove) => {
 	/* Averiguar la tarjeta padre*/
-	const allProductsAdded = document.querySelectorAll(".cart-product-added")	
+	const allProductsAdded = document.querySelectorAll(".cart-product-added")
 	console.log(allProductsAdded)
 
 	let productToRemove = knowProduct(btnRemove, allProductsAdded)
@@ -482,7 +475,7 @@ for (let btnAddToCart of allBtnAddToCart) {
 }
 
 /*💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛
-                             MODALES CARRITO
+							 MODALES CARRITO
 💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛*/
 /** Algoritmo
  * 1- Seleccionar elementos
@@ -519,8 +512,8 @@ hideAllProductsOnCart = () => {
 };
 
 const openModalEmptyCart = () => {
-  show(modalEmptyCart);
-  modalEmptyCart.setAttribute('aria-hidden', false)
+	show(modalEmptyCart);
+	modalEmptyCart.setAttribute('aria-hidden', false)
 };
 
 const emptyCartConfirm = () => {
@@ -528,17 +521,17 @@ const emptyCartConfirm = () => {
 	resetPriceToSubtotal();
 	hideAllProductsOnCart();
 	showCart();
-  hide(modalEmptyCart);
-  overlay.style.zIndex = 2
-  modalEmptyCart.setAttribute('aria-hidden', true)
+	hide(modalEmptyCart);
+	overlay.style.zIndex = 2
+	modalEmptyCart.setAttribute('aria-hidden', true)
 };
 /******************💛💛💛 2- INICIALIZAR EVENTO BTN VACIAR 💛💛💛***************/
 
 btnOpenModalEmptyCart.onclick = () => {
 	openModalEmptyCart();
 	showOverlay();
-    bodyNoScroll();
-  overlay.style.zIndex = 4
+	bodyNoScroll();
+	overlay.style.zIndex = 4
 };
 btnConfirmEmptyCart.onclick = () => {
 	emptyCartConfirm();
@@ -554,7 +547,7 @@ btnCancelEmptyCart.onclick = () => {
 	overlay.style.zIndex = '1';
 };
 /*💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛
-                             CHECKOUT
+							 CHECKOUT
 💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛*/
 
 /**    Algoritmo
@@ -571,14 +564,14 @@ const menuCheckout = document.querySelector('.menu-checkout');
 /******************💛💛💛 2- ABRIR Y CERRAR CHECKOUT 💛💛💛***************/
 
 const showCheckout = () => {
-  show(menuCheckout);
-  menuCheckout.setAttribute('aria-hidden', false)
-  overlay.style.zIndex = 4
+	show(menuCheckout);
+	menuCheckout.setAttribute('aria-hidden', false)
+	overlay.style.zIndex = 4
 };
 
 const hiddeCheckout = () => {
-  hide(menuCheckout);
-  menuCheckout.setAttribute('aria-hidden', true)
+	hide(menuCheckout);
+	menuCheckout.setAttribute('aria-hidden', true)
 };
 
 btnOpenCheckout.onclick = () => {
@@ -592,11 +585,11 @@ btnOpenCheckout.onclick = () => {
 btnFinishBuy.onclick = () => {
 	hiddeOverlay();
 	overlay.style.zIndex = '1';
-  bodyScroll();
-  resetCounterCart();
+	bodyScroll();
+	resetCounterCart();
 	resetPriceToSubtotal();
-  hideAllProductsOnCart();
-  resetOptionsPay()
+	hideAllProductsOnCart();
+	resetOptionsPay()
 	hiddeCheckout();
 	hiddeCart();
 };
@@ -685,8 +678,8 @@ for (let payOption of allPayOptions) {
 }
 
 const resetOptionsPay = () => {
- cashOption.checked = true
- creditOption.checked = false 
- deliveryOption.checked = false
- discountOption.checked = false
+	cashOption.checked = true
+	creditOption.checked = false
+	deliveryOption.checked = false
+	discountOption.checked = false
 }
